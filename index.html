@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANTIGRAVITY // 20B Neural Agent Runtime</title>
+  <meta name="description" content="A neural agent runtime combining NVIDIA 20B inference, real-time DuckDuckGo search, and vision generation without template excess.">
+  
+  <!-- Fontshare Typefaces: Panchang (Display) & Switzer (Body) -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=panchang@700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <a href="#" class="nav-wordmark">AGENT // 20B</a>
+    <ul class="nav-links">
+      <li><a href="#showcase">Outputs</a></li>
+      <li><a href="#playground">Terminal</a></li>
+      <li><a href="#board">Board</a></li>
+      <li><a href="#mechanics">Mechanics</a></li>
+      <li><a href="#tiers">Runtime</a></li>
+    </ul>
+    <a href="#playground" class="nav-action">Launch Agent</a>
+  </header>
+
+  <!-- Hero Section: Shouted headline, rising photograph -->
+  <section class="hero-section" id="hero">
+    <div class="hero-headline-wrap">
+      <h1 class="hero-headline">
+        <span class="mask-line"><span class="mask-inner">RAW SYNAPSE</span></span>
+        <span class="mask-line"><span class="mask-inner">ZERO SLOP</span></span>
+      </h1>
+    </div>
+
+    <div class="hero-media-wrapper">
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
+           alt="Monolithic architectural concrete structure with pure geometries" 
+           class="hero-media-img"
+           loading="eager">
+    </div>
+
+    <div class="hero-flanks">
+      <div class="flank-left">
+        Direct NVIDIA neural bridge coupled with DuckDuckGo real-time ground truth and generative vision synthesis.
+      </div>
+      <div class="flank-right">
+        <strong>Runtime Specification</strong>
+        Model: minimax-m3.1-flash · Tool limit: 2 · History: 10 responses
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Output Index, Live Sheet (Showcase) -->
+  <section class="showcase-section" id="showcase">
+    <div class="showcase-grid">
+      <div class="showcase-nav">
+        <button class="sheet-selector-btn active" data-sheet="search">Search Dossier</button>
+        <button class="sheet-selector-btn" data-sheet="vision">Vision Canvas</button>
+        <button class="sheet-selector-btn" data-sheet="neural">Neural Stream</button>
+      </div>
+
+      <div class="showcase-stage">
+        <!-- Live Sheet: Search Dossier -->
+        <article class="live-sheet is-visible" id="sheet-search" data-ui>
+          <div class="sheet-header-line">
+            <span>DuckDuckGo Engine</span>
+            <span>Latency: 118ms</span>
+          </div>
+          <h2 class="sheet-title">Verified Ground Truth Dossier</h2>
+          <div class="sheet-body">
+            <p>Query: <code>"NVIDIA NIM microservices architecture latency benchmarks"</code></p>
+            <pre><code>STATUS: 200 OK
+SOURCES RETURNED: 4 verified items
+EXTRACTION:
+- TensorRT-LLM optimized throughput: 280 tok/sec
+- Inference endpoint: https://integrate.api.nvidia.com/v1
+- Context window overhead: 4096 tokens bound</code></pre>
+            <p>Direct facts ingested directly into reasoning context without hallucinatory drift or synthetic dates.</p>
+          </div>
+        </article>
+
+        <!-- Live Sheet: Vision Canvas -->
+        <article class="live-sheet" id="sheet-vision" data-ui>
+          <div class="sheet-header-line">
+            <span>Pollinations Synthesis</span>
+            <span>Dimensions: 1024x1024</span>
+          </div>
+          <h2 class="sheet-title">Generative Image Manifest</h2>
+          <div class="sheet-body">
+            <p>Prompt: <code>"brutalist concrete museum pavilion under flat northern daylight"</code></p>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+                 alt="Brutalist architectural render of concrete museum pavilion" 
+                 class="sheet-image-preview">
+            <pre><code>FILE: generated_image_1792760363.png
+STATUS: Saved locally to script directory
+SEED: 259769957</code></pre>
+          </div>
+        </article>
+
+        <!-- Live Sheet: Neural Stream -->
+        <article class="live-sheet" id="sheet-neural" data-ui>
+          <div class="sheet-header-line">
+            <span>Model: gpt-oss-20b</span>
+            <span>Temperature: 0.2</span>
+          </div>
+          <h2 class="sheet-title">Execution Trace</h2>
+          <div class="sheet-body">
+            <pre><code>[AGENT INIT] Base URL: https://integrate.api.nvidia.com/v1
+[RULE CHECK] Greeting bypass active -> tools disabled for conversational inputs
+[DECISION] Query parsed as technical inquiry
+[TOOL CALL] Executed duckduckgo_search(query="...", max_results=5)
+[COMPLETION] Formatted in structured GitHub markdown</code></pre>
+            <p>Context recursion safety: Hard limit of two sequential tool calls prevents execution deadlock.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Interactive Terminal Playground -->
+  <section class="terminal-section" id="playground">
+    <div class="terminal-frame">
+      <div class="terminal-header">
+        <h2 class="terminal-heading">Live Agent Console</h2>
+        <div class="terminal-controls">
+          <span class="terminal-status-indicator">Connected to Python server.py</span>
+          <button id="agentClearBtn" class="terminal-clear-btn" title="Reset output">Clear</button>
+        </div>
+      </div>
+
+      <div class="terminal-chips-row">
+        <button class="prompt-chip" data-query="what is artificial intelligence in 15 words">Inference: What is AI?</button>
+        <button class="prompt-chip" data-query="latest news on python release">Search: Python Release</button>
+        <button class="prompt-chip" data-query="generate an image of a brutalist concrete pavilion">Vision: Generate Pavilion</button>
+      </div>
+
+      <div class="agent-input-row">
+        <input type="text" 
+               id="agentPromptInput" 
+               class="agent-text-input" 
+               placeholder="Type an instruction, e.g. 'search latest AI advancements' or 'generate an image'..."
+               autocomplete="off">
+        <button id="agentSubmitBtn" class="agent-submit-btn">Transmit</button>
+      </div>
+
+      <div class="terminal-output-box" id="agentOutputBox">
+        <span class="output-placeholder">Ready for dispatch. Select a chip above or type an instruction to invoke the agent loop.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Close-ups on a board (12-column mosaic) -->
+  <section class="board-section" id="board">
+    <div class="board-grid">
+      <!-- 6x2: Title tile -->
+      <div class="tile tile-heading">
+        <h2>Engineered without excess</h2>
+        <div class="tile-sub">Strict architectural parameters built directly into Python execution.</div>
+      </div>
+
+      <!-- 6x4: Macro prompt interface -->
+      <div class="tile tile-macro-1" data-ui>
+        <div class="enlarged-element">CTRL+RET</div>
+        <div class="tile-footer-info">
+          <div class="tile-label">Hardware Input Binding</div>
+          <div class="tile-sub">Keyboard dispatch listener hooked to process standard input stream.</div>
+        </div>
+      </div>
+
+      <!-- 3x4: Macro Latency Gauge -->
+      <div class="tile tile-macro-2" data-ui>
+        <div class="enlarged-element">118MS</div>
+        <div class="tile-footer-info">
+          <div class="tile-label">Roundtrip Latency</div>
+          <div class="tile-sub">Optimized connection to NVIDIA NIM infrastructure.</div>
+        </div>
+      </div>
+
+      <!-- 3x2: Model Tag -->
+      <div class="tile tile-macro-3" data-ui>
+        <div class="enlarged-element">20B</div>
+        <div class="tile-footer-info">
+          <div class="tile-label">Weight Parameter Count</div>
+          <div class="tile-sub">Dense reasoning weights.</div>
+        </div>
+      </div>
+
+      <!-- 3x2: Tool Limiter -->
+      <div class="tile tile-macro-4" data-ui>
+        <div class="enlarged-element">MAX:2</div>
+        <div class="tile-footer-info">
+          <div class="tile-label">Tool Call Bound</div>
+          <div class="tile-sub">Recursion prevention guardrail.</div>
+        </div>
+      </div>
+
+      <!-- 6x2: Safety & Encoding -->
+      <div class="tile tile-macro-5" data-ui>
+        <div class="enlarged-element">UTF-8</div>
+        <div class="tile-footer-info">
+          <div class="tile-label">Console Character Pipeline</div>
+          <div class="tile-sub">Explicit Python UTF-8 reconfigure preventing cp1252 Windows encoding exceptions.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Many into one (Mechanics diagram) -->
+  <section class="mechanics-section" id="mechanics">
+    <div class="mechanics-header">
+      <h2 class="mechanics-title">Three phases to resolution</h2>
+      <p class="mechanics-intro">Unstructured requests pass through progressive condensation before emission.</p>
+    </div>
+
+    <div class="matrix-canvas-wrap">
+      <svg class="matrix-svg" viewBox="0 0 1000 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Zone 1: Scatter (Gather) -->
+        <g fill="#4a4a46">
+          <rect x="20" y="30" width="12" height="12"/>
+          <rect x="60" y="80" width="12" height="12"/>
+          <rect x="80" y="20" width="12" height="12"/>
+          <rect x="110" y="110" width="12" height="12"/>
+          <rect x="140" y="50" width="12" height="12"/>
+          <rect x="170" y="95" width="12" height="12"/>
+          <rect x="200" y="35" width="12" height="12"/>
+          <rect x="230" y="120" width="12" height="12"/>
+          <rect x="250" y="65" width="12" height="12"/>
+          <rect x="280" y="25" width="12" height="12"/>
+          <rect x="300" y="90" width="12" height="12"/>
+        </g>
+        <!-- Zone 2: Compression Ribbon (Reduce) -->
+        <g fill="#9a9b96">
+          <rect x="380" y="68" width="12" height="12"/>
+          <rect x="396" y="68" width="12" height="12"/>
+          <rect x="412" y="68" width="12" height="12"/>
+          <rect x="428" y="68" width="12" height="12"/>
+          <rect x="444" y="68" width="12" height="12"/>
+          <rect x="460" y="68" width="12" height="12"/>
+          <rect x="476" y="68" width="12" height="12"/>
+          <rect x="492" y="68" width="12" height="12"/>
+          <rect x="508" y="68" width="12" height="12"/>
+          <rect x="524" y="68" width="12" height="12"/>
+          <rect x="540" y="68" width="12" height="12"/>
+          <rect x="556" y="68" width="12" height="12"/>
+          <rect x="572" y="68" width="12" height="12"/>
+          <rect x="588" y="68" width="12" height="12"/>
+          <rect x="604" y="68" width="12" height="12"/>
+          
+          <rect x="412" y="84" width="12" height="12"/>
+          <rect x="428" y="84" width="12" height="12"/>
+          <rect x="444" y="84" width="12" height="12"/>
+          <rect x="460" y="84" width="12" height="12"/>
+          <rect x="476" y="84" width="12" height="12"/>
+          <rect x="492" y="84" width="12" height="12"/>
+          <rect x="508" y="84" width="12" height="12"/>
+          <rect x="524" y="84" width="12" height="12"/>
+          <rect x="540" y="84" width="12" height="12"/>
+          <rect x="556" y="84" width="12" height="12"/>
+        </g>
+        <!-- Zone 3: Ordered Crystal Array (Release) -->
+        <g fill="#8fa68e">
+          <rect x="700" y="36" width="12" height="12"/>
+          <rect x="724" y="36" width="12" height="12"/>
+          <rect x="748" y="36" width="12" height="12"/>
+          <rect x="772" y="36" width="12" height="12"/>
+          <rect x="796" y="36" width="12" height="12"/>
+          <rect x="820" y="36" width="12" height="12"/>
+          <rect x="844" y="36" width="12" height="12"/>
+
+          <rect x="700" y="60" width="12" height="12"/>
+          <rect x="724" y="60" width="12" height="12"/>
+          <rect x="748" y="60" width="12" height="12"/>
+          <rect x="772" y="60" width="12" height="12"/>
+          <rect x="796" y="60" width="12" height="12"/>
+          <rect x="820" y="60" width="12" height="12"/>
+          <rect x="844" y="60" width="12" height="12"/>
+
+          <rect x="700" y="84" width="12" height="12"/>
+          <rect x="724" y="84" width="12" height="12"/>
+          <rect x="748" y="84" width="12" height="12"/>
+          <rect x="772" y="84" width="12" height="12"/>
+          <rect x="796" y="84" width="12" height="12"/>
+          <rect x="820" y="84" width="12" height="12"/>
+          <rect x="844" y="84" width="12" height="12"/>
+
+          <rect x="700" y="108" width="12" height="12"/>
+          <rect x="724" y="108" width="12" height="12"/>
+          <rect x="748" y="108" width="12" height="12"/>
+          <rect x="772" y="108" width="12" height="12"/>
+          <rect x="796" y="108" width="12" height="12"/>
+          <rect x="820" y="108" width="12" height="12"/>
+          <rect x="844" y="108" width="12" height="12"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="mechanics-steps-row">
+      <div class="mechanics-step-col">
+        <h3>Gather</h3>
+        <p>Parallel ingestion of natural text alongside DuckDuckGo real-time query results.</p>
+      </div>
+      <div class="mechanics-step-col">
+        <h3>Reduce</h3>
+        <p>NVIDIA 20B filters irrelevant tokens and constrains execution paths.</p>
+      </div>
+      <div class="mechanics-step-col">
+        <h3>Release</h3>
+        <p>Deterministic structured artifacts delivered to stdout and image endpoints.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Lead quote, corner quotes (Testimonial Statement) -->
+  <section class="statement-section">
+    <div class="statement-lead-quote">
+      "A quiet assistant that answers directly when known, and searches only when truth demands it."
+    </div>
+
+    <div class="statement-corners-row">
+      <div class="corner-block">
+        <p class="corner-quote">"Zero hallucinations on live occurrences. The system fetches DuckDuckGo snippets and reads them verbatim."</p>
+        <cite class="corner-cite">Runtime Verification Protocol</cite>
+      </div>
+
+      <div class="corner-block">
+        <p class="corner-quote">"Clean execution architecture without decorative wrapper libraries or bloated bundle dependencies."</p>
+        <cite class="corner-cite">Systems Engineering Audit</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Two plans, two fields (Runtime Tiers) -->
+  <section class="split-plans-section" id="tiers">
+    <div class="plan-field-left">
+      <div>
+        <h2 class="plan-title">Workstation</h2>
+        <p class="plan-audience-desc">For local developers running agent.py on personal hardware with personal keys.</p>
+        <p class="plan-specs-summary">Full source code access. Phi agent framework runtime, DuckDuckGo parser, and Pollinations image link generator. Zero server costs.</p>
+      </div>
+
+      <div class="plan-bottom-action-row">
+        <div>
+          <span class="plan-rate">$0</span>
+          <span class="plan-period-text">open code</span>
+        </div>
+        <a href="#playground" class="plan-action-link">Run Workstation</a>
+      </div>
+    </div>
+
+    <div class="plan-field-right">
+      <div>
+        <h2 class="plan-title">Dedicated</h2>
+        <p class="plan-audience-desc">For continuous multi-agent pipelines requiring dedicated GPU throughput.</p>
+        <p class="plan-specs-summary">Dedicated NVIDIA NIM cluster slice with prioritized token queues, persistent session checkpoints, and webhook callbacks.</p>
+      </div>
+
+      <div class="plan-bottom-action-row">
+        <div>
+          <span class="plan-rate">$240</span>
+          <span class="plan-period-text">per node</span>
+        </div>
+        <a href="#playground" class="plan-action-link">Provision Node</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: One word is the button (Massive CTA band) -->
+  <a href="#playground" class="action-band-section">
+    <div class="band-top-row">
+      <div class="band-next-desc">Transmit prompt directly into the Python execution pipeline.</div>
+      <svg class="band-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+      </svg>
+    </div>
+    <div class="band-giant-verb">EXECUTE</div>
+  </a>
+
+  <!-- Section 8: Close and Footer -->
+  <footer class="site-close-footer">
+    <div class="footer-top-grid">
+      <div>
+        <h2 class="footer-invitation-h2">Initialize Your Agent Session</h2>
+        <a href="#playground" class="footer-action-btn">Launch Terminal</a>
+      </div>
+
+      <div class="footer-nav-col">
+        <a href="#hero" class="footer-nav-link">Top of Runtime</a>
+        <a href="#showcase" class="footer-nav-link">Output Index</a>
+        <a href="#board" class="footer-nav-link">Architecture Board</a>
+        <a href="#mechanics" class="footer-nav-link">Pipeline Mechanics</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-legal-line">
+        <span>ANTIGRAVITY RUNTIME // PYTHON & PHI</span>
+        <span>NVIDIA 20B INTEGRATE API</span>
+        <span>2026 REASONING CORP</span>
+      </div>
+
+      <div class="footer-monument-name">ANTIGRAVITY</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
